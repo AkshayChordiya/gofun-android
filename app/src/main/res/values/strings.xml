@@ -1,0 +1,23 @@
+<resources>
+    <!-- App Meta -->
+    <string name="app_name">GoFun</string>
+
+    <!--  -->
+    <string name="nav_timer">Timer</string>
+    <string name="nav_logs">Logs</string>
+
+    <!-- Toolbar Actions -->
+    <string name="action_stop_timer">Stop Timer</string>
+    <string name="action_about">About</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="go_to_register">Not A Member? Register Now</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="go_to_login">Already Member? Login Now</string>
+    <string name="login_failed">Failed to login!</string>
+    <string name="in_time">In Time</string>
+    <string name="default_time">00:00:00</string>
+    <string name="out_time">Out Time</string>
+</resources>

@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.TimerFragment">
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/v_cpb_circular_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="30dp"
+        app:cpb_background_progressbar_color="#A7FFEB"
+        app:cpb_background_progressbar_width="20dp"
+        app:cpb_progressbar_color="@color/colorAccent"
+        app:cpb_progressbar_width="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/v_tv_time_in"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/in_time"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/v_tv_time_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/v_tv_time_left"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:text="@string/default_time"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/v_tv_time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/default_time"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/v_tv_time_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v_tv_time_left"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/default_time"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v_tv_time_out"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/out_time"
+        android:textSize="16sp" />
+
+</RelativeLayout>

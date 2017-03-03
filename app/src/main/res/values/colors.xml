@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App brand colors-->
+    <color name="colorPrimary">#F5F5F5</color>
+    <color name="colorPrimaryDark">#EEEEEE</color>
+    <color name="colorAccent">#009688</color>
+
+    <!-- -->
+</resources>
