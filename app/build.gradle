@@ -47,14 +47,13 @@ dependencies {
             [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.2.3'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.2.3']
     )
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
     compile 'com.github.daniel-stoneuk:material-about-library:1.7.1'
     compile 'com.mikhaellopez:circularprogressbar:1.1.1'
     compile 'me.pushy:sdk:1.0.23'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     testCompile 'junit:junit:4.12'
 }
