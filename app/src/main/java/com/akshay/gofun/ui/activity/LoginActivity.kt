@@ -17,6 +17,7 @@ import com.akshay.gofun.api.LoginService
 import com.akshay.gofun.model.Token
 import com.akshay.gofun.utils.AccountUtils
 import com.akshay.gofun.utils.NetworkUtils.Companion.retrofit
+import com.akshay.gofun.utils.isNotEmail
 import kotlinx.android.synthetic.main.activity_login.*
 import me.pushy.sdk.Pushy
 import retrofit2.Call
@@ -48,10 +49,14 @@ class LoginActivity : AppCompatActivity() {
         val email = login_email.text
         val password = login_password.text
         // TODO: Show text field errors
-        if (email.isEmpty()) {
+        if (email.isEmpty() || email.isNotEmail()) {
+            login_email_layout.error = getString(R.string.invalid_email_address)
             return
         }
-        if (password.isEmpty()) return
+        if (password.isEmpty()) {
+            login_password_layout.error = getString(R.string.invalid_password)
+            return
+        }
 
         login_form.visibility = GONE
         login_progress.visibility = VISIBLE

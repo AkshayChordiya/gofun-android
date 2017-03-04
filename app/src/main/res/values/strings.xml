@@ -20,4 +20,6 @@
     <string name="in_time">In Time</string>
     <string name="default_time">00:00:00</string>
     <string name="out_time">Out Time</string>
+    <string name="invalid_email_address">Invalid Email address</string>
+    <string name="invalid_password">Password can\'t be empty</string>
 </resources>
