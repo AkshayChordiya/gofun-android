@@ -10,6 +10,7 @@ import android.view.MenuItem
 import com.akshay.gofun.R
 import com.akshay.gofun.ui.fragment.TimerFragment
 import com.akshay.gofun.utils.AccountUtils
+import com.akshay.gofun.utils.consume
 import com.akshay.gofun.utils.load
 import kotlinx.android.synthetic.main.activity_main.*
 import me.pushy.sdk.Pushy
@@ -29,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Pushy.listen(this)
         setSupportActionBar(toolbar)
-        supportFragmentManager.load { replace(R.id.base_layout, TimerFragment.newInstance()) }
         bottom_nav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-
+                R.id.nav_timer -> consume { supportFragmentManager.load { replace(R.id.base_layout, TimerFragment.newInstance()) } }
+                else -> true
             }
         }
         if (!AccountUtils.isLoggedIn(baseContext)) startActivityForResult(Intent(baseContext, LoginActivity::class.java), RETURN_CODE)
@@ -43,12 +44,9 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.action_about -> Log.d(LOG_TAG, "Clicked About")
-            else -> super.onOptionsItemSelected(item)
-        }
-        return super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_about -> consume { Log.d(LOG_TAG, "Clicked About") }
+        else -> super.onOptionsItemSelected(item)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
