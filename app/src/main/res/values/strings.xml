@@ -2,24 +2,50 @@
     <!-- App Meta -->
     <string name="app_name">GoFun</string>
 
-    <!--  -->
+    <!-- Bottom bar tabs -->
     <string name="nav_timer">Timer</string>
     <string name="nav_logs">Logs</string>
 
     <!-- Toolbar Actions -->
     <string name="action_stop_timer">Stop Timer</string>
     <string name="action_about">About</string>
+
+    <!-- Login -->
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="go_to_register">Not A Member? Register Now</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="register">Register</string>
-    <string name="go_to_login">Already Member? Login Now</string>
     <string name="login_failed">Failed to login!</string>
+
+    <!-- Register  -->
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="go_to_login">Already Member? Login Now</string>
+
+    <!-- Timer page -->
     <string name="in_time">In Time</string>
     <string name="default_time">00:00:00</string>
     <string name="out_time">Out Time</string>
+
+    <!-- Error -->
     <string name="invalid_email_address">Invalid Email address</string>
     <string name="invalid_password">Password can\'t be empty</string>
+
+    <!-- About -->
+    <string name="about_version">Version</string>
+    <string name="about_changelog">Changelog</string>
+    <string name="about_license">Licenses</string>
+    <string name="about_team">Team Flash</string>
+    <string name="developer_akshay_title">Akshay Chordiya</string>
+    <string name="developer_akshay_subtext">Android (Kotlin) &amp; Desktop App Developer</string>
+    <string name="developer_aditya_title">Aditya Kamble</string>
+    <string name="developer_aditya_subtext">Android (Java) &amp; Django Developer</string>
+    <string name="developer_piyush_title">Piyush Mulik</string>
+    <string name="developer_piyush_subtext">Inspiration for GoFun</string>
+    <string name="developer_marc_title">Marc Napitupulu</string>
+    <string name="developer_marc_subtext">Graphic Deesigner</string>
+    <string name="about_support">Support</string>
+    <string name="about_rate">Rate on Google Play</string>
+    <string name="about_email">Email Support</string>
+    <string name="about_report_bug">Report a bug</string>
 </resources>

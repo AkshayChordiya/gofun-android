@@ -1,10 +1,9 @@
 package com.akshay.gofun.utils
 
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
+import android.content.Intent
+import android.net.Uri
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 
@@ -26,8 +25,8 @@ fun Editable.isNotEmail(): Boolean {
     return !android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }
 
-@ColorInt fun AppCompatActivity.getColor(@ColorRes colorRes: Int): Int {
-    return ContextCompat.getColor(baseContext, colorRes)
+fun AppCompatActivity.openUrl(url: String): Unit {
+    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 }
 
 inline fun consume(f: () -> Unit): Boolean {

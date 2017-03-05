@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.akshay.gofun.R
@@ -30,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Pushy.listen(this)
         setSupportActionBar(toolbar)
+        supportFragmentManager.load { replace(R.id.base_layout, TimerFragment.newInstance()) }
         bottom_nav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_timer -> consume { supportFragmentManager.load { replace(R.id.base_layout, TimerFragment.newInstance()) } }
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_about -> consume { Log.d(LOG_TAG, "Clicked About") }
+        R.id.action_about -> consume { startActivity(Intent(baseContext, AboutActivity::class.java)) }
         else -> super.onOptionsItemSelected(item)
     }
 

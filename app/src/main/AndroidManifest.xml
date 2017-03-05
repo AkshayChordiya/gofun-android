@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.akshay.gofun">
+          package="com.akshay.gofun">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -19,16 +19,19 @@
         <!-- Launcher Activity -->
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <!-- Login Page -->
-        <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".ui.activity.LoginActivity"/>
 
         <!-- Register Page -->
         <activity android:name=".ui.activity.RegisterActivity"/>
+
+        <!-- About  -->
+        <activity android:name=".ui.activity.AboutActivity"/>
 
         <!-- Pushy Declarations -->
 
@@ -41,7 +44,7 @@
             <intent-filter>
 
                 <!-- Do not modify this -->
-                <action android:name="pushy.me" />
+                <action android:name="pushy.me"/>
             </intent-filter>
         </receiver>
 
@@ -51,9 +54,9 @@
             android:name="me.pushy.sdk.receivers.PushyUpdateReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
 
-                <data android:scheme="package" />
+                <data android:scheme="package"/>
             </intent-filter>
         </receiver>
 
@@ -63,13 +66,13 @@
             android:name="me.pushy.sdk.receivers.PushyBootReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <!-- Pushy Socket Service -->
         <!-- Do not modify - internal socket service -->
-        <service android:name="me.pushy.sdk.services.PushySocketService" />
+        <service android:name="me.pushy.sdk.services.PushySocketService"/>
 
         <!-- End Pushy Declarations -->
 

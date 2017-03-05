@@ -2,4 +2,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- About -->
+    <dimen name="baseline">16dp</dimen>
+    <dimen name="baseline_content">72dp</dimen>
+    <dimen name="baseline_half">8dp</dimen>
+    <dimen name="baseline_card">@dimen/baseline_half</dimen>
+    <dimen name="about_item_drawable_padding">24dp</dimen>
 </resources>
