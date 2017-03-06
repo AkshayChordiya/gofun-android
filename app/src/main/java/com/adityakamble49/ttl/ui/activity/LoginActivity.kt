@@ -1,4 +1,4 @@
-package com.akshay.gofun.ui.activity
+package com.adityakamble49.ttl.ui.activity
 
 import android.Manifest
 import android.app.Activity
@@ -12,12 +12,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
-import com.akshay.gofun.R
-import com.akshay.gofun.api.LoginService
-import com.akshay.gofun.model.Token
-import com.akshay.gofun.utils.AccountUtils
-import com.akshay.gofun.utils.NetworkUtils.Companion.retrofit
-import com.akshay.gofun.utils.isNotEmail
+import com.adityakamble49.ttl.R
+import com.adityakamble49.ttl.api.LoginService
+import com.adityakamble49.ttl.model.Token
+import com.adityakamble49.ttl.utils.NetworkUtils.Companion.retrofit
+import com.adityakamble49.ttl.utils.isNotEmail
+import com.adityakamble49.ttl.utils.setToken
 import kotlinx.android.synthetic.main.activity_login.*
 import me.pushy.sdk.Pushy
 import retrofit2.Call
@@ -123,7 +123,7 @@ class LoginActivity : AppCompatActivity() {
                 login.enqueue(object : Callback<Token> {
                     override fun onResponse(call: Call<Token>?, response: Response<Token>?) {
                         if (response != null) {
-                            AccountUtils.setToken(baseContext, response.body().token)
+                            setToken(baseContext, response.body().token)
                             setResult(Activity.RESULT_OK)
                             finish()
                         } else {

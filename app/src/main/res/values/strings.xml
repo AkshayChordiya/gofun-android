@@ -24,7 +24,9 @@
 
     <!-- Timer page -->
     <string name="in_time">In Time</string>
-    <string name="default_time">00:00:00</string>
+    <string name="notification_in_time">Let\'s make beautiful things 🔨</string>
+    <string name="default_remaining_time">00:00:00</string>
+    <string name="default_time">00:00</string>
     <string name="out_time">Out Time</string>
 
     <!-- Error -->
@@ -48,4 +50,5 @@
     <string name="about_rate">Rate on Google Play</string>
     <string name="about_email">Email Support</string>
     <string name="about_report_bug">Report a bug</string>
+    <string name="time_over">Time Over</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.akshay.gofun">
+          package="com.adityakamble49.ttl">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -33,9 +33,9 @@
         <!-- About  -->
         <activity android:name=".ui.activity.AboutActivity"/>
 
+        <receiver android:name=".receiver.TimeOverReceiver"/>
+
         <!-- Pushy Declarations -->
-
-
         <!-- Pushy Notification Receiver -->
         <!-- Incoming push notifications will invoke the following BroadcastReceiver -->
         <receiver

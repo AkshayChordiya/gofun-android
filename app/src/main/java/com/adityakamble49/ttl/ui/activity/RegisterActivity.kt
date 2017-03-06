@@ -1,9 +1,9 @@
-package com.akshay.gofun.ui.activity
+package com.adityakamble49.ttl.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.akshay.gofun.R
+import com.adityakamble49.ttl.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 /**

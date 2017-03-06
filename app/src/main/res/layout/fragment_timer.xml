@@ -6,7 +6,7 @@
     tools:context=".ui.fragment.TimerFragment">
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
-        android:id="@+id/v_cpb_circular_timer"
+        android:id="@+id/go_home_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -14,22 +14,23 @@
         app:cpb_background_progressbar_color="#A7FFEB"
         app:cpb_background_progressbar_width="20dp"
         app:cpb_progressbar_color="@color/colorAccent"
+        app:cpb_progress="100"
         app:cpb_progressbar_width="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/v_tv_time_in"
+        android:layout_above="@+id/time_in"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/in_time"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/v_tv_time_in"
+        android:id="@+id/time_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/v_tv_time_left"
+        android:layout_above="@+id/remaining_time"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginBottom="8dp"
@@ -37,19 +38,19 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/v_tv_time_left"
+        android:id="@+id/remaining_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/default_time"
-        android:textSize="50sp" />
+        android:text="@string/default_remaining_time"
+        android:textSize="50sp"/>
 
     <TextView
-        android:id="@+id/v_tv_time_out"
+        android:id="@+id/time_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/v_tv_time_left"
+        android:layout_below="@+id/remaining_time"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="8dp"
@@ -59,7 +60,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/v_tv_time_out"
+        android:layout_below="@+id/time_out"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/out_time"

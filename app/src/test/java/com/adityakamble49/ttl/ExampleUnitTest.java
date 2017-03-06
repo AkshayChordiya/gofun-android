@@ -1,4 +1,4 @@
-package com.akshay.gofun;
+package com.adityakamble49.ttl;
 
 import org.junit.Test;
 

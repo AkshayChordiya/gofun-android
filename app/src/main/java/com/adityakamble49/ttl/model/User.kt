@@ -1,4 +1,4 @@
-package com.akshay.gofun.model
+package com.adityakamble49.ttl.model
 
 /**
  * @author Akshay Chordiya

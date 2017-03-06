@@ -1,6 +1,6 @@
-package com.akshay.gofun.api
+package com.adityakamble49.ttl.api
 
-import com.akshay.gofun.model.Token
+import com.adityakamble49.ttl.model.Token
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

@@ -1,4 +1,4 @@
-package com.akshay.gofun;
+package com.adityakamble49.ttl;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

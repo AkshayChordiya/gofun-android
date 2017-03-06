@@ -1,5 +1,9 @@
-package com.akshay.gofun.utils
+package com.adityakamble49.ttl.utils
 
+import android.annotation.SuppressLint
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.support.v4.app.FragmentManager
@@ -27,6 +31,21 @@ fun Editable.isNotEmail(): Boolean {
 
 fun AppCompatActivity.openUrl(url: String): Unit {
     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+}
+
+fun Context.formatString(stringRes: Int, vararg args: Any?): String {
+    return String.format(getString(stringRes), args)
+}
+
+fun Context.getAlarmManager(): AlarmManager {
+    return getSystemService(Context.ALARM_SERVICE) as AlarmManager
+}
+
+@SuppressLint("NewApi")
+fun AlarmManager.setExactCompat(type: Int, triggerAtMillis: Long, operation: PendingIntent) = if (hasKitKatApi()) {
+    setExact(type, triggerAtMillis, operation)
+} else {
+    set(type, triggerAtMillis, operation)
 }
 
 inline fun consume(f: () -> Unit): Boolean {

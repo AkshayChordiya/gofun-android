@@ -1,4 +1,4 @@
-package com.akshay.gofun.ui.activity
+package com.adityakamble49.ttl.ui.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.akshay.gofun.R
-import com.akshay.gofun.ui.fragment.TimerFragment
-import com.akshay.gofun.utils.AccountUtils
-import com.akshay.gofun.utils.consume
-import com.akshay.gofun.utils.load
+import com.adityakamble49.ttl.R
+import com.adityakamble49.ttl.ui.fragment.TimerFragment
+import com.adityakamble49.ttl.utils.consume
+import com.adityakamble49.ttl.utils.isLoggedIn
+import com.adityakamble49.ttl.utils.load
 import kotlinx.android.synthetic.main.activity_main.*
 import me.pushy.sdk.Pushy
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 else -> true
             }
         }
-        if (!AccountUtils.isLoggedIn(baseContext)) startActivityForResult(Intent(baseContext, LoginActivity::class.java), RETURN_CODE)
+        if (!isLoggedIn(baseContext)) startActivityForResult(Intent(baseContext, LoginActivity::class.java), RETURN_CODE)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

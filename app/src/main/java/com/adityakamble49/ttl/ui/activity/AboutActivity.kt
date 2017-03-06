@@ -1,12 +1,12 @@
-package com.akshay.gofun.ui.activity
+package com.adityakamble49.ttl.ui.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-import com.akshay.gofun.BuildConfig
-import com.akshay.gofun.R
-import com.akshay.gofun.utils.consume
-import com.akshay.gofun.utils.openUrl
+import com.adityakamble49.ttl.BuildConfig
+import com.adityakamble49.ttl.R
+import com.adityakamble49.ttl.utils.consume
+import com.adityakamble49.ttl.utils.openUrl
 import kotlinx.android.synthetic.main.activity_about.*
 import kotlinx.android.synthetic.main.card_about_development.*
 import kotlinx.android.synthetic.main.card_about_general.*
