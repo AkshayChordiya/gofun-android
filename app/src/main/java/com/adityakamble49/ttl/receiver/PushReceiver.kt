@@ -40,6 +40,7 @@ class PushReceiver : BroadcastReceiver() {
                     setSmallIcon(R.drawable.ic_timer)
                     setContentTitle(context.getString(R.string.app_name))
                     setContentText(context.getString(R.string.notification_in_time))
+                    setContentIntent(PendingIntent.getActivity(context, 14, Intent(context, MainActivity::class.java), 0))
                     setWhen(time)
                     setDefaults(Notification.DEFAULT_ALL)
                     setLights(ContextCompat.getColor(context, R.color.colorAccent), 1000, 1000)
