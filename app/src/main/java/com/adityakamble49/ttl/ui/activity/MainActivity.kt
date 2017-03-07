@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_about -> consume { startActivity(Intent(baseContext, AboutActivity::class.java)) }
+        R.id.action_stop_timer -> consume { }
         else -> super.onOptionsItemSelected(item)
     }
 

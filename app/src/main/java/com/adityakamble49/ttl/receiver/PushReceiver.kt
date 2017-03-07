@@ -33,7 +33,7 @@ class PushReceiver : BroadcastReceiver() {
             with(intent) {
                 // Store the in time
                 val time = getStringExtra(PREF_TIME_KEY).toLong()
-//                AccountUtils.setInTime(context, time)
+                setInTime(context, time)
 
                 // Show Notification
                 val notification = with(NotificationCompat.Builder(context)) {
