@@ -1,6 +1,10 @@
 package com.adityakamble49.ttl.utils
 
+import android.content.Context
 import android.os.Build
+import android.support.v7.app.AlertDialog
+import android.webkit.WebView
+import com.adityakamble49.ttl.R
 
 /**
  *
@@ -8,6 +12,37 @@ import android.os.Build
  * @since 06-03-2017.
  * @version 1.0
  */
+
+/**
+ * Creates dialog to show app changelog
+ *
+ * @param context context
+ * @return dialog to show app changelog
+ */
+fun createChangelogDialog(context: Context): AlertDialog {
+    val webView = WebView(context)
+    webView.loadUrl("file:///android_asset/changelog.html")
+    return AlertDialog.Builder(context).setTitle(R.string.about_changelog)
+            .setView(webView)
+            .setPositiveButton(android.R.string.ok, { dialog, _ -> dialog.dismiss() })
+            .create()
+}
+
+/**
+ * Creates dialog to show open source licenses
+ *
+ * @param context context
+ * @return dialog to show open source licenses
+ */
+fun createLicensesDialog(context: Context): AlertDialog {
+    val webView = WebView(context)
+    webView.loadUrl("file:///android_asset/licenses.html")
+    return AlertDialog.Builder(context).setTitle(R.string.about_license)
+            .setView(webView)
+            .setPositiveButton(android.R.string.ok, { dialog, _ -> dialog.dismiss() })
+            .create()
+}
+
 /**
  * Get if the device is running Marshmallow above
 
