@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Build
 import android.support.v7.app.AlertDialog
 import android.webkit.WebView
+import com.adityakamble49.ttl.BuildConfig
 import com.adityakamble49.ttl.R
 
 /**
@@ -78,3 +79,14 @@ fun hasKitKatApi(): Boolean {
 fun hasJellyBeanApi(): Boolean {
     return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
 }
+
+/**
+ * Get the basic device details to include in Support Email
+ */
+fun getDeviceDetails(): String = "- - - - - - - - - - - - -" + '\n' +
+        "App Version: ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})\n" +
+        "Android Version: ${Build.VERSION.RELEASE} (${Build.VERSION.SDK_INT})\n" +
+        "Build version: ${Build.DISPLAY}\n" +
+        "Brand: ${Build.BRAND}\n" +
+        "Device Codename: ${Build.DEVICE}\n" +
+        "Model: ${Build.MODEL}"

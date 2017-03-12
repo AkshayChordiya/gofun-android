@@ -6,10 +6,15 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Environment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
+import com.adityakamble49.ttl.BuildConfig
+import com.adityakamble49.ttl.R
+import java.io.BufferedReader
+import java.io.File
 
 /**
  * @author Akshay Chordiya
@@ -51,4 +56,28 @@ fun AlarmManager.setExactCompat(type: Int, triggerAtMillis: Long, operation: Pen
 inline fun consume(f: () -> Unit): Boolean {
     f()
     return true
+}
+
+fun AppCompatActivity.sendSupportEmail(email: String = "akshaychordiya2@gmail.com") {
+    // save logcat in file
+    val log = Runtime.getRuntime().exec("logcat -d").inputStream.bufferedReader().use { BufferedReader::readText }
+    val outputFile = File(Environment.getExternalStorageDirectory().toString() + "/" +
+            "logcat.txt")
+    outputFile.writeText(log.toString())
+
+    /* Create the Email Intent */
+    val emailIntent = Intent(Intent.ACTION_SEND)
+    /* Fill it with Data */
+    emailIntent.type = "text/plain"
+    emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback " + getString(R.string.app_name)
+            + " v" + BuildConfig.VERSION_NAME)
+    emailIntent.putExtra(Intent.EXTRA_TEXT,
+            "\n\n" + getDeviceDetails())
+    if (outputFile.exists()) {
+        emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(outputFile))
+    }
+
+    /* Send it off to the Activity-Chooser */
+    startActivity(Intent.createChooser(emailIntent, getString(R.string.about_email)))
 }
