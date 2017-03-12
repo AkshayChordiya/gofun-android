@@ -35,6 +35,12 @@
 
         <receiver android:name=".receiver.TimeOverReceiver"/>
 
+        <receiver android:name=".receiver.RestartTimeBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
         <!-- Pushy Declarations -->
         <!-- Pushy Notification Receiver -->
         <!-- Incoming push notifications will invoke the following BroadcastReceiver -->
