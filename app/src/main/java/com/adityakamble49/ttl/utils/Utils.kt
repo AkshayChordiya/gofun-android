@@ -1,11 +1,15 @@
 package com.adityakamble49.ttl.utils
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.support.v7.app.AlertDialog
 import android.webkit.WebView
 import com.adityakamble49.ttl.BuildConfig
 import com.adityakamble49.ttl.R
+import com.adityakamble49.ttl.receiver.TimeOverReceiver
 
 /**
  *
@@ -13,6 +17,15 @@ import com.adityakamble49.ttl.R
  * @since 06-03-2017.
  * @version 1.0
  */
+
+/**
+ * Sets the alarm to trigger when the time is over.
+ */
+fun setTimeUpAlarm(context: Context) {
+    val pendingIntent = PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0)
+    val alarmManager = context.getAlarmManager()
+    alarmManager.setExactCompat(AlarmManager.RTC, getEndTime(context), pendingIntent)
+}
 
 /**
  * Creates dialog to show app changelog

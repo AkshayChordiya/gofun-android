@@ -12,7 +12,7 @@ import android.support.v4.content.LocalBroadcastManager
 import android.util.Log
 import android.view.*
 import com.adityakamble49.ttl.R
-import com.adityakamble49.ttl.receiver.PushReceiver
+import com.adityakamble49.ttl.receiver.TimeInReceiver
 import com.adityakamble49.ttl.receiver.TimeOverReceiver
 import com.adityakamble49.ttl.utils.*
 import kotlinx.android.synthetic.main.fragment_timer.*
@@ -62,7 +62,7 @@ class TimerFragment : Fragment() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 mTimer?.apply { start() }
             }
-        }, IntentFilter(PushReceiver.START_TIMER))
+        }, IntentFilter(TimeInReceiver.START_TIMER))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {

@@ -1,6 +1,5 @@
 package com.adityakamble49.ttl.receiver
 
-import android.app.AlarmManager
 import android.app.Notification
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -12,13 +11,16 @@ import android.support.v4.content.LocalBroadcastManager
 import android.support.v7.app.NotificationCompat
 import com.adityakamble49.ttl.R
 import com.adityakamble49.ttl.ui.activity.MainActivity
-import com.adityakamble49.ttl.utils.*
+import com.adityakamble49.ttl.utils.PREF_TIME_KEY
+import com.adityakamble49.ttl.utils.didTimeStart
+import com.adityakamble49.ttl.utils.setInTime
+import com.adityakamble49.ttl.utils.setTimeUpAlarm
 
 /**
  * @author Akshay Chordiya
  * @since 3/3/2017.
  */
-class PushReceiver : BroadcastReceiver() {
+class TimeInReceiver : BroadcastReceiver() {
 
     companion object {
         val START_TIMER = "com.adityakamble49.ttl.start_timer"
@@ -54,9 +56,7 @@ class PushReceiver : BroadcastReceiver() {
                 LocalBroadcastManager.getInstance(context).sendBroadcast(mainIntent)
 
                 // Start countdown via Alarm
-                val pendingIntent = PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0)
-                val alarmManager = context.getAlarmManager()
-                alarmManager.setExactCompat(AlarmManager.RTC, getEndTime(context), pendingIntent)
+                setTimeUpAlarm(context)
             }
         }
     }
