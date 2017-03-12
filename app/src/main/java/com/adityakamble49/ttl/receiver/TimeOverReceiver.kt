@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.NotificationCompat
 import com.adityakamble49.ttl.R
 import com.adityakamble49.ttl.ui.activity.MainActivity
+import com.adityakamble49.ttl.utils.disableComponent
 import com.adityakamble49.ttl.utils.removeInTime
 
 /**
@@ -36,6 +37,7 @@ class TimeOverReceiver : BroadcastReceiver() {
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(74, notification)
         // TODO: Send an local broadcast to UI to stop time
+        context.packageManager.disableComponent<RestartTimeBootReceiver>(context)
     }
 
 }

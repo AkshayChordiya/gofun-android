@@ -3,8 +3,10 @@ package com.adityakamble49.ttl.utils
 import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Environment
 import android.support.v4.app.FragmentManager
@@ -80,4 +82,16 @@ fun AppCompatActivity.sendSupportEmail(email: String = "akshaychordiya2@gmail.co
 
     /* Send it off to the Activity-Chooser */
     startActivity(Intent.createChooser(emailIntent, getString(R.string.about_email)))
+}
+
+inline fun <reified T> PackageManager.enableComponent(context: Context) {
+    setComponentEnabledSetting(ComponentName(context, T::class.java),
+            PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+            PackageManager.DONT_KILL_APP)
+}
+
+inline fun <reified T> PackageManager.disableComponent(context: Context) {
+    setComponentEnabledSetting(ComponentName(context, T::class.java),
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+            PackageManager.DONT_KILL_APP)
 }

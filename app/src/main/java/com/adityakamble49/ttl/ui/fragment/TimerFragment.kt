@@ -12,6 +12,7 @@ import android.support.v4.content.LocalBroadcastManager
 import android.util.Log
 import android.view.*
 import com.adityakamble49.ttl.R
+import com.adityakamble49.ttl.receiver.RestartTimeBootReceiver
 import com.adityakamble49.ttl.receiver.TimeInReceiver
 import com.adityakamble49.ttl.receiver.TimeOverReceiver
 import com.adityakamble49.ttl.utils.*
@@ -74,6 +75,7 @@ class TimerFragment : Fragment() {
             Log.d(LOG_TAG, "Timer stopped")
             removeInTime(context)
             context.getAlarmManager().cancel(PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0))
+            context.packageManager.disableComponent<RestartTimeBootReceiver>(context)
         }
         else -> super.onOptionsItemSelected(item)
     }

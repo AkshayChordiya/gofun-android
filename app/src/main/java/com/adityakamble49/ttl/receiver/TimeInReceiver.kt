@@ -11,10 +11,7 @@ import android.support.v4.content.LocalBroadcastManager
 import android.support.v7.app.NotificationCompat
 import com.adityakamble49.ttl.R
 import com.adityakamble49.ttl.ui.activity.MainActivity
-import com.adityakamble49.ttl.utils.PREF_TIME_KEY
-import com.adityakamble49.ttl.utils.didTimeStart
-import com.adityakamble49.ttl.utils.setInTime
-import com.adityakamble49.ttl.utils.setTimeUpAlarm
+import com.adityakamble49.ttl.utils.*
 
 /**
  * @author Akshay Chordiya
@@ -57,6 +54,9 @@ class TimeInReceiver : BroadcastReceiver() {
 
                 // Start countdown via Alarm
                 setTimeUpAlarm(context)
+
+                // Enable boot receiver to preserve on-going time even after reboot
+                context.packageManager.enableComponent<RestartTimeBootReceiver>(context)
             }
         }
     }
