@@ -56,7 +56,7 @@ class PushReceiver : BroadcastReceiver() {
                 // Start countdown via Alarm
                 val pendingIntent = PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0)
                 val alarmManager = context.getAlarmManager()
-                alarmManager.setExactCompat(AlarmManager.RTC, calculateEndTime(), pendingIntent)
+                alarmManager.setExactCompat(AlarmManager.RTC, getEndTime(context), pendingIntent)
             }
         }
     }
