@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:contentInsetStart="@dimen/baseline_content"
-            app:navigationIcon="@drawable/ic_arrow_back_black"
+            app:navigationIcon="@drawable/ic_arrow_back"
             app:title="@string/action_about"/>
 
     </android.support.design.widget.AppBarLayout>

@@ -3,7 +3,8 @@
     <!-- App brand colors-->
     <color name="colorPrimary">#F5F5F5</color>
     <color name="colorPrimaryDark">#EEEEEE</color>
-    <color name="colorAccent">#009688</color>
+    <color name="colorAccent">#00E5FF</color>
 
-    <!-- -->
+    <!-- Progress Bar -->
+    <color name="colorProgressBackground">#84FFFF</color>
 </resources>

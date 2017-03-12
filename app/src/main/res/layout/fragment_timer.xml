@@ -1,9 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.TimerFragment">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.fragment.TimerFragment">
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/go_home_progress"
@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_margin="30dp"
-        app:cpb_background_progressbar_color="#A7FFEB"
+        app:cpb_background_progressbar_color="@color/colorProgressBackground"
         app:cpb_background_progressbar_width="20dp"
-        app:cpb_progressbar_color="#64FFDA"
-        app:cpb_progressbar_width="15dp" />
+        app:cpb_progressbar_color="@color/colorAccent"
+        app:cpb_progressbar_width="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/in_time"
-        android:textSize="16sp" />
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/time_in"
@@ -34,7 +34,7 @@
         android:layout_centerVertical="true"
         android:layout_marginBottom="8dp"
         android:text="@string/default_time"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/remaining_time"
@@ -54,7 +54,7 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="8dp"
         android:text="@string/default_time"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,6 +63,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/out_time"
-        android:textSize="16sp" />
+        android:textSize="16sp"/>
 
 </RelativeLayout>
