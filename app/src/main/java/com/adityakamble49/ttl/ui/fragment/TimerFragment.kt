@@ -41,23 +41,33 @@ class TimerFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         setHasOptionsMenu(true)
         if (didTimeStart(context)) {
-            time_in.text = toHourMinFormat(getInTime(context))
-            time_out.text = toHourMinFormat(getEndTime(context))
-            remaining_time.text = toReadableTime(getRemainingTime(context))
-            go_home_progress.progress = 100F
-            mTimer = object : CountDownTimer(getRemainingTime(context), 1000) {
-                override fun onFinish() {
-                    time_in.text = getString(R.string.default_time)
-                    time_out.text = getString(R.string.default_time)
-                    remaining_time.text = getString(R.string.default_remaining_time)
-                    go_home_progress.progress = 0F
-                }
+            val remainingTime = getRemainingTime(context)
+            if (remainingTime < 0) {
+                time_in.text = toHourMinFormat(getInTime(context))
+                time_out.text = toHourMinFormat(getEndTime(context))
+                remaining_time.text = toReadableTime(remainingTime)
+                go_home_progress.progress = 100F
+                mTimer = object : CountDownTimer(getRemainingTime(context), 1000) {
+                    override fun onFinish() {
+                        time_in.text = getString(R.string.default_time)
+                        time_out.text = getString(R.string.default_time)
+                        remaining_time.text = getString(R.string.default_remaining_time)
+                        go_home_progress.progress = 0F
+                        stopTimer()
+                    }
 
-                override fun onTick(millisUntilFinished: Long) {
-                    remaining_time.text = toReadableTime(millisUntilFinished)
-                    go_home_progress.setProgressWithAnimation(getPercentLeft(millisUntilFinished))
-                }
-            }.start()
+                    override fun onTick(millisUntilFinished: Long) {
+                        remaining_time.text = toReadableTime(millisUntilFinished)
+                        go_home_progress.setProgressWithAnimation(getPercentLeft(millisUntilFinished))
+                    }
+                }.start()
+            } else {
+                time_in.text = getString(R.string.default_time)
+                time_out.text = getString(R.string.default_time)
+                remaining_time.text = getString(R.string.default_remaining_time)
+                go_home_progress.progress = 0F
+                stopTimer()
+            }
         }
         LocalBroadcastManager.getInstance(context).registerReceiver(object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
@@ -72,12 +82,16 @@ class TimerFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem?) = when (item?.itemId) {
         R.id.action_stop_timer -> consume {
-            Log.d(LOG_TAG, "Timer stopped")
-            removeInTime(context)
-            context.getAlarmManager().cancel(PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0))
-            context.packageManager.disableComponent<RestartTimeBootReceiver>(context)
+            stopTimer()
         }
         else -> super.onOptionsItemSelected(item)
+    }
+
+    private fun stopTimer() {
+        Log.d(LOG_TAG, "Timer stopped")
+        removeInTime(context)
+        context.getAlarmManager().cancel(PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0))
+        context.packageManager.disableComponent<RestartTimeBootReceiver>(context)
     }
 
     override fun onDestroyView() {

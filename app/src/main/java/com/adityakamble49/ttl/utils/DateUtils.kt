@@ -30,8 +30,8 @@ fun getPercentLeft(timeLeftInMillis: Long): Float {
 }
 
 fun getRemainingTime(context: Context): Long {
-    // TODO: Get the hour and min value from pref
-    return Math.abs(convertToMillis(7, 30) - (System.currentTimeMillis() - getInTime(context)))
+    // TODO: Get the hour and min value from
+    return convertToMillis() - (System.currentTimeMillis() - getInTime(context))
 }
 
 fun getEndTime(context: Context): Long {
