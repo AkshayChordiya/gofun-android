@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_about"
-        android:title="@string/action_about"/>
+        android:id="@+id/action_stop_timer"
+        android:title="@string/action_stop_timer"/>
 </menu>

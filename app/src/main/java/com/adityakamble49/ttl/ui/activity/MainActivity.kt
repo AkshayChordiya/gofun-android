@@ -40,13 +40,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+        return consume { menuInflater.inflate(R.menu.menu_main, menu) }
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_about -> consume { startActivity(Intent(baseContext, AboutActivity::class.java)) }
-        R.id.action_stop_timer -> consume { }
         else -> super.onOptionsItemSelected(item)
     }
 

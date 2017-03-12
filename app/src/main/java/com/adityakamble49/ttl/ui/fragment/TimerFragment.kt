@@ -1,5 +1,6 @@
 package com.adityakamble49.ttl.ui.fragment
 
+import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -8,11 +9,11 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.support.v4.app.Fragment
 import android.support.v4.content.LocalBroadcastManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.Log
+import android.view.*
 import com.adityakamble49.ttl.R
 import com.adityakamble49.ttl.receiver.PushReceiver
+import com.adityakamble49.ttl.receiver.TimeOverReceiver
 import com.adityakamble49.ttl.utils.*
 import kotlinx.android.synthetic.main.fragment_timer.*
 
@@ -37,6 +38,7 @@ class TimerFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setHasOptionsMenu(true)
         if (didTimeStart(context)) {
             time_in.text = toHourMinFormat(getInTime(context))
             time_out.text = toHourMinFormat(getEndTime(context))
@@ -61,6 +63,19 @@ class TimerFragment : Fragment() {
                 mTimer?.apply { start() }
             }
         }, IntentFilter(PushReceiver.START_TIMER))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.menu_timer, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?) = when (item?.itemId) {
+        R.id.action_stop_timer -> consume {
+            Log.d(LOG_TAG, "Timer stopped")
+            removeInTime(context)
+            context.getAlarmManager().cancel(PendingIntent.getBroadcast(context, 15, Intent(context, TimeOverReceiver::class.java), 0))
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {
