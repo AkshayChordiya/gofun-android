@@ -10,6 +10,12 @@
              android:paddingTop="@dimen/activity_vertical_margin"
              tools:context=".ui.activity.LoginActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/ic_launcher"/>
+
     <!-- Login Form -->
     <LinearLayout
         android:id="@+id/login_form"

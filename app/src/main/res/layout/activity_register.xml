@@ -10,13 +10,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ui.activity.RegisterActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/ic_launcher"/>
+
     <!-- Register Form -->
     <LinearLayout
         android:id="@+id/register_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/register_email"
@@ -57,9 +63,9 @@
 
     <ProgressBar
         android:id="@+id/register_progress"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:visibility="gone"/>
 
 </FrameLayout>
