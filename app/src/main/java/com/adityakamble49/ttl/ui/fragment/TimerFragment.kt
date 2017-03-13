@@ -42,7 +42,7 @@ class TimerFragment : Fragment() {
         setHasOptionsMenu(true)
         if (didTimeStart(context)) {
             val remainingTime = getRemainingTime(context)
-            if (remainingTime < 0) {
+            if (remainingTime > 0) {
                 time_in.text = toHourMinFormat(getInTime(context))
                 time_out.text = toHourMinFormat(getEndTime(context))
                 remaining_time.text = toReadableTime(remainingTime)
@@ -66,7 +66,6 @@ class TimerFragment : Fragment() {
                 time_out.text = getString(R.string.default_time)
                 remaining_time.text = getString(R.string.default_remaining_time)
                 go_home_progress.progress = 0F
-                stopTimer()
             }
         }
         LocalBroadcastManager.getInstance(context).registerReceiver(object : BroadcastReceiver() {
