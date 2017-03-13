@@ -42,6 +42,7 @@ class TimeInReceiver : BroadcastReceiver() {
                     setContentIntent(PendingIntent.getActivity(context, 14, Intent(context, MainActivity::class.java), 0))
                     setWhen(time)
                     setDefaults(Notification.DEFAULT_ALL)
+                    setAutoCancel(true)
                     setLights(ContextCompat.getColor(context, R.color.colorAccent), 1000, 1000)
                     build()
                 }
