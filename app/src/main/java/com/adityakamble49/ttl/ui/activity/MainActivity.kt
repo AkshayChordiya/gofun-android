@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
 
     val LOG_TAG = "MainActivity"
 
-    val RETURN_CODE = 74
+    companion object {
+        val RETURN_CODE = 74
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

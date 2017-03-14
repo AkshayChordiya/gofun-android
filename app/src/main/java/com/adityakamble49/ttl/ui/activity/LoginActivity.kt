@@ -46,9 +46,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun doLogin() {
-        val email = login_email.text
-        val password = login_password.text
-        // TODO: Show text field errors
+        val email = login_email.text.toString()
+        val password = login_password.text.toString()
         if (email.isEmpty() || email.isNotEmail()) {
             login_email_layout.error = getString(R.string.invalid_email_address)
             return
@@ -100,7 +99,7 @@ class LoginActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }*/
 
-    inner class RegisterForPushNotifications : AsyncTask<Void, Void, String>() {
+    private inner class RegisterForPushNotifications : AsyncTask<Void, Void, String>() {
 
         override fun doInBackground(vararg params: Void): String? {
             try {

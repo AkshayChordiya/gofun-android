@@ -28,11 +28,11 @@ inline fun FragmentManager.load(func: FragmentTransaction.() -> Unit) {
     transaction.commit()
 }
 
-fun Editable.isEmail(): Boolean {
+fun String.isEmail(): Boolean {
     return android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }
 
-fun Editable.isNotEmail(): Boolean {
+fun String.isNotEmail(): Boolean {
     return !android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }
 

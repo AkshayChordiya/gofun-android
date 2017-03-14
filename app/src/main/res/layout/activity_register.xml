@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
     <!-- Register Form -->
     <LinearLayout
@@ -24,28 +24,54 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/register_email"
+        <!-- Email Address Field-->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_email_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email_address"
-            android:inputType="textEmailAddress"
-            android:nextFocusDown="@+id/register_password" />
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
 
-        <EditText
-            android:id="@+id/register_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:nextFocusDown="@+id/register_password_confirm"/>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/register_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@+id/register_password" />
 
-        <EditText
-            android:id="@+id/register_password_confirm"
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Password Field-->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_password_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/confirm_password"
-            android:inputType="textPassword"/>
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/register_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:nextFocusDown="@+id/register_password_confirm" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <!-- Confirm Password Field-->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_password_confirm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/register_password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/register_button"
@@ -66,6 +92,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </FrameLayout>

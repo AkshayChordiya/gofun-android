@@ -32,6 +32,7 @@
     <!-- Error -->
     <string name="invalid_email_address">Invalid Email address</string>
     <string name="invalid_password">Password can\'t be empty</string>
+    <string name="invalid_confirm_password">The passwords don\'t match</string>
 
     <!-- About -->
     <string name="about_version">Version</string>
