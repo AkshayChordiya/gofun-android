@@ -1,4 +1,6 @@
 # GoFun :tada:
+[![Build Status](https://travis-ci.org/AkshayChordiya/gofun-android.svg?branch=master)](https://travis-ci.org/AkshayChordiya/gofun-android)
+
 Workaholic people go to their offices and get engrossed in their work so much that they forget about their lives beyond that….almost every day.
 GoFun is an ultimate solution to serve as a reminder to stop the work and live your life, have some fun :notes:. It helps you manage your work life balance.
 
