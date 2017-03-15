@@ -14,5 +14,11 @@ android:
 
     # Support Libraries
     - extra-android-support
+     # Additional components
+    - extra-android-m2repository
+
+before_script:
+  - chmod +x gradlew
+
 script:
   - ./gradlew assemble
