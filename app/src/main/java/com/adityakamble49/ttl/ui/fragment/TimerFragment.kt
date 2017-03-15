@@ -25,7 +25,22 @@ import kotlinx.android.synthetic.main.fragment_timer.*
 class TimerFragment : Fragment() {
 
     val LOG_TAG = "TimerFragment"
-    var mTimer: CountDownTimer? = null
+    val mTimer: CountDownTimer by lazy {
+        object : CountDownTimer(getRemainingTime(context), 1000) {
+            override fun onFinish() {
+                time_in.text = getString(R.string.default_time)
+                time_out.text = getString(R.string.default_time)
+                remaining_time.text = getString(R.string.default_remaining_time)
+                go_home_progress.progress = 0F
+                stopTimer()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                remaining_time.text = toReadableTime(millisUntilFinished)
+                go_home_progress.setProgressWithAnimation(getPercentLeft(millisUntilFinished))
+            }
+        }
+    }
 
     companion object {
         fun newInstance(): TimerFragment {
@@ -47,20 +62,7 @@ class TimerFragment : Fragment() {
                 time_out.text = toHourMinFormat(getEndTime(context))
                 remaining_time.text = toReadableTime(remainingTime)
                 go_home_progress.progress = 100F
-                mTimer = object : CountDownTimer(getRemainingTime(context), 1000) {
-                    override fun onFinish() {
-                        time_in.text = getString(R.string.default_time)
-                        time_out.text = getString(R.string.default_time)
-                        remaining_time.text = getString(R.string.default_remaining_time)
-                        go_home_progress.progress = 0F
-                        stopTimer()
-                    }
-
-                    override fun onTick(millisUntilFinished: Long) {
-                        remaining_time.text = toReadableTime(millisUntilFinished)
-                        go_home_progress.setProgressWithAnimation(getPercentLeft(millisUntilFinished))
-                    }
-                }.start()
+                mTimer.start()
             } else {
                 time_in.text = getString(R.string.default_time)
                 time_out.text = getString(R.string.default_time)
@@ -70,7 +72,7 @@ class TimerFragment : Fragment() {
         }
         LocalBroadcastManager.getInstance(context).registerReceiver(object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
-                mTimer?.apply { start() }
+                mTimer.start()
             }
         }, IntentFilter(TimeInReceiver.START_TIMER))
     }
@@ -95,6 +97,6 @@ class TimerFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        mTimer?.cancel()
+        mTimer.cancel()
     }
 }
