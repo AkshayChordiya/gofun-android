@@ -1,4 +1,5 @@
 # GoFun :tada:
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d53b76ba024844318ff4cdafd1548a31)](https://www.codacy.com/app/AkshayChordiya/gofun-android?utm_source=github.com&utm_medium=referral&utm_content=AkshayChordiya/gofun-android&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/AkshayChordiya/gofun-android.svg?branch=master)](https://travis-ci.org/AkshayChordiya/gofun-android)
 
 Workaholic people go to their offices and get engrossed in their work so much that they forget about their lives beyond that….almost every day.
