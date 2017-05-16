@@ -121,7 +121,7 @@ class LoginActivity : AppCompatActivity() {
                 val login = loginService.login(email.toString(), password.toString(), deviceId)
                 login.enqueue(object : Callback<Token> {
                     override fun onResponse(call: Call<Token>?, response: Response<Token>?) {
-                        if (response != null) {
+                        if (response != null && response.body() != null) {
                             setToken(baseContext, response.body().token)
                             setResult(Activity.RESULT_OK)
                             finish()
